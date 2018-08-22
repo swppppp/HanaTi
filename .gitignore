@@ -2,6 +2,9 @@
 
 ### Eclipse ###
 
+### Mac ###
+.DS_Store
+
 .metadata
 bin/
 tmp/
