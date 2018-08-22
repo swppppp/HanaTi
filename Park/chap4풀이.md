@@ -77,7 +77,7 @@ public class Exercise4_5 {
     }
   }
 }</code>
-<pre>
+</pre>
 ### [4-6] 주사위 2개, 눈의 합 6되는 경우의 수 출력  
 <pre><code>
 public class Exercise4_6 {
