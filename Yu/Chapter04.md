@@ -198,22 +198,78 @@ Math.random() 메소드는 0.0 이상에서 1.0 미만의 double형 실수 값�
 8\*2=16 9\*2=18  
 8\*3=24 9\*3=27  
 
-    public class Exercise4_11 {
-      public static void main(String[] args) {
-        // Fibonnaci 수열의 시작의 첫 두 숫자를 1, 1로 한다.
-        int num1 = 1;
-        int num2 = 1;
-        int num3 = 0; // 세번째 값
-        System.out.print(num1+","+num2);
-        for (int i = 0 ; i < 8 ; i++ ) {
-          //추가된 코드
-          num3 = num1 + num2;
-          System.out.print("," + num3);
-          num1 = num2;
-          num2 = num3;
-          //
-        }
-      } // end of main
+    public class Exercise4_12 {
+	public static void main(String[] args) {
+		for(int j = 2; j <= 9; j +=3) {
+			for(int i = 1; i <= 3; i++) {
+				System.out.print(j + "*" + i + "=" + (j * i) + "\t");
+				System.out.print((j+1) + "*" + i + "=" + (j+1)*i + "\t");
+				if(j != 8) 
+					System.out.print((j+2) + "*" + i + "=" + (j+2)*i + "\t");
+				System.out.println();
+			}
+			System.out.println();
+		}
+	}
+
+
+### 13. 다음은 주어진 문자열(value)이 숫자인지를 판별하는 프로그램이다. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.
+
+    class Exercise4_13 {
+	public static void main(String[] args) {
+		String value = "12o34";
+		char ch = ' ';
+		boolean isNumber = true;
+		// 반복문과 charAt(int i)를 이용해서 문자열의 문자를
+		// 하나씩 읽어서 검사한다.
+		for(int i=0; i < value.length() ;i++) {
+			ch = value.charAt(i);
+			if (ch < 48 || ch > 57) {
+				isNumber = false;
+				break;
+			}
+		if (isNumber) {
+			System.out.println(value+"는 숫자입니다.");
+		} else {
+			System.out.println(value+"는 숫자가 아닙니다.");
+		}
+	} // end of main
     } // end of class
 
-Math.random() 메소드는 0.0 이상에서 1.0 미만의 double형 실수 값을 반환한다. 
+### 14. 다음은 숫자맞추기 게임을 작성한 것이다. 1과 100사이의 값을 반복적으로 입력해서 컴퓨터가 생각한 값을 맞추면 게임이 끝난다. 사용자가 값을 입력하면, 컴퓨터는 자신이 생각한 값과 비교해서 결과를 알려준다. 사용자가 컴퓨터가 생각한 숫자를 맞추면 게임이 끝나고 몇 번 만에 숫자를 맞췄는지 알려준다. (1)~(2)에 알맞은 코드를 넣어 프로그램을 완성하시오.
+
+    class Exercise4_14 {
+		public static void main(String[] args) {
+			// 1~100사이의 임의의 값을 얻어서 answer에 저장한다.
+			int answer = (int)(Math.random()*100) + 1;
+			int input = 0; // 사용자입력을 저장할 공간
+			int count = 0; // 시도횟수를 세기위한 변수
+			// 화면으로 부터 사용자입력을 받기 위해서 Scanner클래스 사용
+			//System.out.println(answer);
+			java.util.Scanner s = new java.util.Scanner(System.in);
+			do {
+				count++;
+				System.out.print("1과 100사이의 값을 입력하세요 :");
+				input = s.nextInt(); // 입력받은 값을 변수 input에 저장한다.
+				if(input == answer ) {
+					System.out.println("정답! (" + answer + ")");
+					System.out.println("횟수 : " + count);
+					break;
+				}
+				if(input > answer)
+					System.out.println("더 작은 수를 입력하세요");
+				else if(input < answer)
+					System.out.println("더 큰 수를 입력하세요");
+			} while(true); // 무한반복문
+		} // end of main
+    } // end of class
+
+### 15. 다음은 회문수를 구하는 프로그램이다. 회문수(palindrome)란, 숫자를 거꾸로 읽어도 앞으로 읽는 것과 같은 수를 말한다. 예를 들면 ‘12321’이나 ‘13531’같은 수를 말한다. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오. [Hint] 나머지 연산자를 이용하시오.
+
+    class Exercise4_15 {
+		public static void main(String[] args) {
+			
+		} // end of main
+    } // end of class
+
+
