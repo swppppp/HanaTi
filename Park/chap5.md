@@ -79,11 +79,12 @@ money -= coinNum*coinUnit[i];
 ## [5-8] answer배열에 담긴 데이터 읽고 각 숫자 세어서 개수만큼 별찍기  
 ```
 (1)
-모르겠긔...
+모르겠긔...==>알겟당
 11번 반복하면==>counter[4] = {3, 2, 2, 4}
+counter[answer[i]-1] += answer[i];
 (2)
 System.out.print(counter[i]);
-for(int j=0; i<counter[j];j++)
+for(int j=0; i<counter[i];j++)
     System.out.print("*");
 ```
 ## [5-9] 별 시계방향으로 90도 회전  
