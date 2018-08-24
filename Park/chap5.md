@@ -46,7 +46,15 @@ average = total/20;
 ```
 ## [5-5] 1~9사이 중복않는 숫자로 이루어진 3자리 숫자 만듦(Math.random())  
 ```
-이해가 안가넹..?
+(1)
+tmp = ballArr[i];
+ballArr[i] = ballArr[j];
+ballArr[j] = tmp;
+
+(2)
+for(int i=0; i<3; i++){
+        ball3[i]=ballArr[i];
+}
 ```
 ## [5-6] 거스름돈을 몇 개 동전으로 지불 money금액->가능한 적은 수의 동전  
 ```
