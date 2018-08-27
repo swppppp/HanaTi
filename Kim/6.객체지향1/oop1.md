@@ -52,7 +52,7 @@ public int getTotal(){
 }
 
 public float getAverage(){
-    return Math.round(((getTotal()/3) * 10) / 10.0);
+    return Math.round(((getTotal()/3) * 10)) / 10.0;
 }
 ```
 
@@ -84,7 +84,7 @@ public double getDistance(int x, int y){
 >
 > 인스턴스변수: kind, num
 >
-> 지역변수: card
+> 지역변수(매개변수): card
 
 [6-9]
 
@@ -96,15 +96,17 @@ public double getDistance(int x, int y){
 
 [6-10]
 
-> c(컴파일러에 의해 디폴트 생성자 추가)
+> b.(생성자는 객체를 생성할 때 사용되기는 하지만 객체를 초기화할 목적으로 사용되는 것)
 >
-> d(매개변수를 달리해서 오버로딩 가능)
+> e(매개변수를 달리해서 오버로딩 가능)
 
 [6-11]
 
-> c (인스턴스변수와 매개변수를 구별)
->
 > b (클래스 메서드 내에서는 사용할 수 없음) -> 클래스 메서드에서는 인스턴스 변수를 참조할 수 없다.
+>
+> c 틀린이유-> 매개변수라 생각했지만 매개변수도 지역변수이다.
+>
+>
 
 [6-12]
 
@@ -118,7 +120,9 @@ public double getDistance(int x, int y){
 
 [6-13]
 
-> b
+> b,c,d
+>
+> 완전 실수
 
 [6-14] * 헷갈림
 
@@ -144,7 +148,19 @@ public double getDistance(int x, int y){
 
 > d
 >
-> 기본값-> 초기화블록 -> 생성자-> 명시적초기화
+> 기본값-> 초기화블록 -> 생성자-> 명시적초기화 (틀림)
+>
+> 기본값->명시적초기화-> 초기화블록-> 생성자
+>
+> 왠지 명시적 초기화 이거일듯
+>
+> class AAA(){
+>
+> 	int x = 0;
+>
+> }
+>
+>
 
 [6-16]
 
@@ -164,7 +180,13 @@ public double getDistance(int x, int y){
 
 > ABC123
 >
-> After change: ABC123456
+> After change: ABC123456(틀림)
+>
+> after change: ABC123
+>
+> 왜 안바뀌냐면 String 클래스 특성에서 한번 생성된 인스턴스는 변경될 수 없다라는 조건에서
+>
+> 바뀌지 않는다.  덧셈연산을 하게 되면 새로운 문자열이 생성되고 새로운 문자열의 주소가 ABC123456을 참조하게 된다.
 
 [6-20]
 
@@ -248,7 +270,7 @@ public static int max(int[] arr){
 ```
 public static int abs(int value){
     if(value < 0) return value*-1;
-    return value;
+    else return value;
 }
 ```
 
